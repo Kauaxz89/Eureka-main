@@ -1,0 +1,64 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.header-eureka {
+  background-color: #3e3a39;
+  padding: 1.5rem 2rem;
+  color: #f1ede8;
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  background: #f6c317; 
+  font-family: 'Georgia', serif;
+}
+
+#coruja img {
+  max-height: 300px;
+}
+
+#diversao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  color: #003366; 
+}
+
+#diversao h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#diversao h4 {
+  font-size: 1.2rem;
+}
+
+.botao-comecar {
+  display: inline-block;
+  background-color: #e4601e; 
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.botao-comecar:hover {
+  background-color: #c94f15;
+}
+

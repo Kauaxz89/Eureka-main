@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <section id="jogo-desenhar-tela" class="jogo-tela">
+            <h2>Desenhar</h2>
+            <canvas id="canvas-desenhar" width="600" height="400"></canvas>
+            <div class="controles">
+                <label for="linha">Espessura da linha:</label>
+                <input type="range" id="linha" min="1" max="20" value="5">
+                <button onclick="limparCanvas()">Limpar</button>
+            </div>
+            <button onclick="fecharJogo()">Voltar</button>
+        </section>
+        <script src="js/script.js"></script>
+</body>
+</html>

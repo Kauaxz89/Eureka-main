@@ -1,64 +1,159 @@
-*{
-    margin: 0%;
-    padding: 0%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f9f9f9;
+    color: #3e3a39;
+}
+
 .header-eureka {
-  background-color: #3e3a39;
-  padding: 1.5rem 2rem;
-  color: #f1ede8;
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #3e3a39;
+    padding: 1.5rem 2rem;
+    color: #f1ede8;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #inicio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 4rem;
-  background: #f6c317; 
-  font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background: #f6c317;
 }
 
 #coruja img {
-  max-height: 300px;
+    max-height: 300px;
 }
 
 #diversao {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  color: #003366; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    color: #003366;
 }
 
 #diversao h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 #diversao h4 {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .botao-comecar {
-  display: inline-block;
-  background-color: #e4601e; 
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 2rem;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: background 0.3s;
-  margin-top: 1rem;
+    display: inline-block;
+    background-color: #e4601e;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-top: 1rem;
 }
 
 .botao-comecar:hover {
-  background-color: #c94f15;
+    background-color: #c94f15;
 }
 
+#jogos {
+    text-align: center;
+    padding: 2rem;
+}
+
+.jogo-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.jogo-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.jogo-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.jogo-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.jogo-card button {
+    background-color: #e4601e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.jogo-card button:hover {
+    background-color: #c94f15;
+}
+
+.botao-jogo {
+    display: inline-block;
+    background-color: #e4601e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+.botao-jogo:hover {
+    background-color: #c94f15;
+}
+
+.jogo-tela {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+canvas {
+    border: 2px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #3e3a39;
+    color: #f1ede8;
+    margin-top: 2rem;
+}

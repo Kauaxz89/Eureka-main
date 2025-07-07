@@ -4,14 +4,16 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap');
+
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f9f9f9;
+    font-family: 'Baloo 2', cursive;
+    background-color: #fef6ec;
     color: #3e3a39;
 }
 
 .header-eureka {
-    background-color: #3e3a39;
+    background-color: #53b4e6;
     padding: 1.5rem 2rem;
     color: #f1ede8;
     text-align: center;
@@ -35,7 +37,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    color: #003366;
+    color: #5e548e;
 }
 
 #diversao h1 {
@@ -49,7 +51,7 @@ body {
 
 .botao-comecar {
     display: inline-block;
-    background-color: #e4601e;
+    background-color: #f582ae;
     color: white;
     padding: 0.8rem 2rem;
     border-radius: 2rem;
@@ -58,7 +60,20 @@ body {
     font-weight: bold;
     transition: background 0.3s;
     margin-top: 1rem;
+
+
 }
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.botao-comecar:hover {
+    animation: pulso 0.4s ease-in-out;
+}
+
 
 .botao-comecar:hover {
     background-color: #c94f15;
@@ -77,7 +92,7 @@ body {
 }
 
 .jogo-card {
-    background: #fff;
+    background: #fff5e6;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -96,7 +111,7 @@ body {
 }
 
 .jogo-card button {
-    background-color: #e4601e;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -111,7 +126,7 @@ body {
 
 .botao-jogo {
     display: inline-block;
-    background-color: #e4601e;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -120,6 +135,7 @@ body {
     font-weight: bold;
     transition: background 0.3s;
     text-align: center;
+
 }
 
 .botao-jogo:hover {
@@ -131,7 +147,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background: #fff;
+    background: #fff5e6;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 2rem auto;
     max-width: 800px;

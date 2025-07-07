@@ -27,6 +27,18 @@ function iniciarPintar() {
     }
 }
 
+function carregarMolde(src) {
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 100, 50, 400, 300); // ajuste de posição e escala
+    };
+    img.src = src;
+}
+
+
 // Função para limpar o canvas
 function limparCanvas() {
     const canvas = document.querySelector('canvas');

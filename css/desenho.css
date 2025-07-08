@@ -1,0 +1,159 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2:wght@500&display=swap');
+
+body {
+    font-family: 'Baloo 2', cursive;
+    background-color: #fef6ec
+    color: #3e3a39;
+}
+
+/* Seção principal do jogo */
+.jogo-tela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #fff5e6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    max-width: 1000px;
+    border-radius: 20px;
+}
+
+/* Título da tela de desenho */
+.jogo-tela h2 {
+    font-size: 2.2rem;
+    color: #f582ae;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+/* Container do canvas */
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(to bottom right, #ffe0ec, #d6f7ff);
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo do canvas */
+canvas {
+    background-color: white;
+    border: 10px dashed #f582ae; /* borda divertida */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    cursor: crosshair;
+}
+
+canvas.borracha-ativa {
+    border: 10px dashed #c94f15;
+}
+
+
+/* Controles (espessura da linha e botões) */
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    padding: 1.2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mesmos estilos de botões */
+.controles button {
+    background-color: #53b4e6;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.6rem;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Fredoka One', cursive;
+}
+
+.controles button:hover {
+    background-color: #3b8cbf;
+    transform: scale(1.05);
+}
+
+
+.controles label {
+    font-weight: bold;
+    color: #3e3a39;
+    font-size: 1rem;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Estilo do range (espessura da linha) */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 160px;
+    height: 10px;
+    background: #53b4e6;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #f582ae;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões */
+button {
+    background-color: #f582ae;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.6rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Fredoka One', cursive;
+}
+
+button:hover {
+    background-color: #c94f15;
+    transform: scale(1.05);
+}
+
+/* Botão "Voltar" */
+.jogo-tela button:last-child {
+    background-color: #53b4e6;
+    margin-top: 1rem;
+}
+
+.jogo-tela button:last-child:hover {
+    background-color: #3b8cbf;
+}

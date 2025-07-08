@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo de Desenhar</title>
+    <link rel="stylesheet" href="css/desenho.css">
 </head>
+
 <body>
-      <section id="jogo-desenhar-tela" class="jogo-tela">
-            <h2>Desenhar</h2>
-            <canvas id="canvas-desenhar" width="600" height="400"></canvas>
-            <div class="controles">
-                <label for="linha">Espessura da linha:</label>
-                <input type="range" id="linha" min="1" max="20" value="5">
-                <button onclick="limparCanvas()">Limpar</button>
-            </div>
-            <button onclick="fecharJogo()">Voltar</button>
-        </section>
-        <script src="js/script.js"></script>
+
+    <section id="jogo-desenhar-tela" class="jogo-tela">
+        <h2>🎨 Desenhe!</h2>
+
+        <div class="canvas-container">
+            <canvas id="canvas-desenhar" width="900" height="500"></canvas>
+        </div>
+
+        <div class="controles">
+            <label for="linha">Espessura da linha:</label>
+            <input type="range" id="linha" min="1" max="20" value="5">
+
+            <button onclick="limparCanvas()">🧹 Limpar</button>
+            <button id="borracha-btn" onclick="ativarBorracha()">🧽 Modo Borracha</button>
+            <label for="cor">Cor do lápis:</label>
+            <input type="color" id="cor" value="#000000">
+
+        </div>
+
+        <button onclick="fecharJogo()">⬅️ Voltar</button>
+    </section>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

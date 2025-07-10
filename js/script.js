@@ -62,24 +62,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Função para inicializar o jogo de desenhar
+window.onload = () => {
+    iniciarDesenhar();
+};
+
 function iniciarDesenhar() {
     const canvas = document.getElementById('canvas-desenhar');
     const ctx = canvas.getContext('2d');
-    let isDrawing = false;
-    let espessuraLinha = 5;
+    const linhaRange = document.getElementById('linha');
+    const borrachaBtn = document.getElementById('borracha-btn');
+const corInput = document.getElementById('cor');
+let corAtual = corInput.value;
 
-    // Definir espessura da linha pelo controle deslizante
-    document.getElementById('linha').addEventListener('input', function (e) {
-        espessuraLinha = e.target.value;
+// Atualiza a cor sempre que o input muda
+corInput.addEventListener('input', (e) => {
+    corAtual = e.target.value;
+});
+
+
+    let isDrawing = false;
+    let usarBorracha = false;
+    let espessuraLinha = parseInt(linhaRange.value);
+
+    // 🎚️ Atualiza espessura
+    linhaRange.addEventListener('input', (e) => {
+        espessuraLinha = parseInt(e.target.value);
     });
 
-    // Eventos de mouse para desenhar
-    canvas.addEventListener('mousedown', () => (isDrawing = true));
-    canvas.addEventListener('mouseup', () => (isDrawing = false));
-    canvas.addEventListener('mousemove', desenhar);
+    // 🔀 Alterna entre lápis e borracha
+    borrachaBtn.addEventListener('click', () => {
+        usarBorracha = !usarBorracha;
+        borrachaBtn.textContent = usarBorracha ? '🖊️ Modo Lápis' : '🧽 Modo Borracha';
+        canvas.style.cursor = usarBorracha ? 'not-allowed' : 'crosshair';
+    });
 
-    function desenhar(e) {
+    // 🧹 Limpar canvas
+    window.limparCanvas = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+    };
+
+    // 🖌️ Começa desenho
+    canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    });
+
+    // ✋ Termina desenho
+    canvas.addEventListener('mouseup', () => {
+        isDrawing = false;
+        ctx.beginPath();
+    });
+
+    // ✏️ Continua desenhando
+    canvas.addEventListener('mousemove', (e) => {
         if (!isDrawing) return;
 
         const rect = canvas.getBoundingClientRect();
@@ -88,17 +130,25 @@ function iniciarDesenhar() {
 
         ctx.lineWidth = espessuraLinha;
         ctx.lineCap = 'round';
-        ctx.strokeStyle = '#000000';
+if (usarBorracha) {
+    ctx.globalCompositeOperation = 'destination-out'; // apaga
+    ctx.strokeStyle = 'rgba(0,0,0,1)'; // cor irrelevante ao apagar
+} else {
+    ctx.globalCompositeOperation = 'source-over'; // desenha
+    ctx.strokeStyle = corAtual; // usa cor selecionada
+}
+
 
         ctx.lineTo(x, y);
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(x, y);
-    }
+    });
+}
 
     // Iniciar um novo caminho ao abrir
     ctx.beginPath();
-}
+
 
 // Função para inicializar o jogo de treino de escrita
 function iniciarEscrita() {
@@ -108,3 +158,4 @@ function iniciarEscrita() {
     // Adicionar funcionalidades específicas para treino de escrita aqui
     console.log('Treino de escrita iniciado!');
 }
+

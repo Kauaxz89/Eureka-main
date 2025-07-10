@@ -13,19 +13,21 @@ body {
 }
 
 .header-eureka {
-    background-color: #53b4e6;
+    background-color: blue;
     padding: 1.5rem 2rem;
-    color: #f1ede8;
+    color: #ffffff;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
 
 #inicio {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
-    background: #f6c317;
+    background: #ffd000;
 }
 
 #coruja img {
@@ -37,7 +39,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    color: #5e548e;
+    color: #ffffff;
 }
 
 #diversao h1 {
@@ -51,7 +53,7 @@ body {
 
 .botao-comecar {
     display: inline-block;
-    background-color: #f582ae;
+    background-color: #ff7300;
     color: white;
     padding: 0.8rem 2rem;
     border-radius: 2rem;
@@ -82,6 +84,7 @@ body {
 #jogos {
     text-align: center;
     padding: 2rem;
+    background-color: #FFEBCD;
 }
 
 .jogo-container {
@@ -92,13 +95,24 @@ body {
 }
 
 .jogo-card {
-    background: #fff5e6;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 250px;
     text-align: center;
 }
+
+.jogo-card {
+    border-radius: 20px;
+    color: white;
+    font-family: 'Baloo 2', cursive;
+    transition: transform 0.3s;
+}
+
+.jogo-card:hover {
+    transform: translateY(-5px);
+}
+
 
 .jogo-card h3 {
     font-size: 1.5rem;
@@ -108,10 +122,10 @@ body {
 .jogo-card p {
     font-size: 1rem;
     color: #555;
+    margin-top: 10px;
 }
 
 .jogo-card button {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -124,9 +138,22 @@ body {
     background-color: #c94f15;
 }
 
+#jogo-pintar {
+    background-color: rgb(255, 231, 20);
+}
+
+#jogo-desenhar {
+    background-color: #FF0000;
+}
+
+#jogo-escrita {
+    background-color: #00BFFF;
+}
+
+
 .botao-jogo {
     display: inline-block;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background: #ff7300;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -135,6 +162,7 @@ body {
     font-weight: bold;
     transition: background 0.3s;
     text-align: center;
+    margin-top: 20px;
 
 }
 
@@ -177,9 +205,9 @@ canvas {
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background: #3e3a39;
-    color: #f1ede8;
-    margin-top: 2rem;
+    background: linear-gradient(to right, #ffa07a, #f08080);
+    color: #fff;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1rem;
+    border-top: 5px dotted white;
 }

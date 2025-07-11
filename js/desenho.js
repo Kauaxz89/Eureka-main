@@ -158,4 +158,3 @@ function iniciarEscrita() {
     // Adicionar funcionalidades específicas para treino de escrita aqui
     console.log('Treino de escrita iniciado!');
 }
-

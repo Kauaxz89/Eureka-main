@@ -71,13 +71,60 @@ function iniciarDesenhar() {
     const ctx = canvas.getContext('2d');
     const linhaRange = document.getElementById('linha');
     const borrachaBtn = document.getElementById('borracha-btn');
-const corInput = document.getElementById('cor');
-let corAtual = corInput.value;
+    const corInput = document.getElementById('cor');
+    let corAtual = corInput.value;
 
-// Atualiza a cor sempre que o input muda
-corInput.addEventListener('input', (e) => {
-    corAtual = e.target.value;
-});
+    // Atualiza a cor sempre que o input muda
+    corInput.addEventListener('input', (e) => {
+        corAtual = e.target.value;
+    });
+
+    function redimensionarCanvas(canvas) {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+
+    // Chamar no início e quando a tela mudar
+    window.addEventListener('resize', () => {
+        const canvas = document.getElementById('canvas-desenhar');
+        redimensionarCanvas(canvas);
+    });
+
+    // Dentro de iniciarDesenhar():
+    redimensionarCanvas(canvas);
+
+    canvas.addEventListener('touchstart', iniciarDesenhoMobile, { passive: false });
+    canvas.addEventListener('touchmove', desenharMobile, { passive: false });
+    canvas.addEventListener('touchend', () => isDrawing = false);
+
+    function iniciarDesenhoMobile(e) {
+        e.preventDefault();
+        isDrawing = true;
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+
+    function desenharMobile(e) {
+        if (!isDrawing) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+
+        ctx.lineWidth = espessuraLinha;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = corAtual;
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+
 
 
     let isDrawing = false;
@@ -130,13 +177,13 @@ corInput.addEventListener('input', (e) => {
 
         ctx.lineWidth = espessuraLinha;
         ctx.lineCap = 'round';
-if (usarBorracha) {
-    ctx.globalCompositeOperation = 'destination-out'; // apaga
-    ctx.strokeStyle = 'rgba(0,0,0,1)'; // cor irrelevante ao apagar
-} else {
-    ctx.globalCompositeOperation = 'source-over'; // desenha
-    ctx.strokeStyle = corAtual; // usa cor selecionada
-}
+        if (usarBorracha) {
+            ctx.globalCompositeOperation = 'destination-out'; // apaga
+            ctx.strokeStyle = 'rgba(0,0,0,1)'; // cor irrelevante ao apagar
+        } else {
+            ctx.globalCompositeOperation = 'source-over'; // desenha
+            ctx.strokeStyle = corAtual; // usa cor selecionada
+        }
 
 
         ctx.lineTo(x, y);
@@ -146,8 +193,8 @@ if (usarBorracha) {
     });
 }
 
-    // Iniciar um novo caminho ao abrir
-    ctx.beginPath();
+// Iniciar um novo caminho ao abrir
+ctx.beginPath();
 
 
 // Função para inicializar o jogo de treino de escrita

@@ -103,4 +103,53 @@
     .header-eureka p {
       font-size: 1rem;
     }
+
+@media (max-width: 600px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  .header-eureka{
+    margin-right: 20px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .palavra-modelo {
+    font-size: 36px;
+    padding: 12px 20px;
+    min-width: 70px;
+  }
+
+  input[type="text"] {
+    font-size: 20px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 26px;
+  }
+
+  .header-eureka h1 {
+    font-size: 2rem;
+  }
+
+  .header-eureka p {
+    font-size: 1rem;
+  }
+
+  .pontuacao {
+    font-size: 1.3rem;
+  }
+}
+
+
  

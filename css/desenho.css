@@ -36,6 +36,19 @@ body {
     font-family: 'Fredoka One', cursive;
 }
 
+canvas {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 18 / 10; /* Mantém proporção aproximada */
+}
+.canvas-container {
+    width: 100%;
+    max-width: 95vw;
+    overflow-x: auto;
+}
+
+
 /* Container do canvas */
 .canvas-container {
     display: flex;

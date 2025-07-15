@@ -72,6 +72,16 @@
       box-shadow: 0 6px #ff7fa3;
     }
 
+    button.voltar {
+  background: linear-gradient(to right, #c2c2ff, #a3a3ff);
+  box-shadow: 0 4px #7a7ad1;
+}
+
+button.voltar:hover {
+  box-shadow: 0 6px #6a6ad1;
+}
+
+
     #resultado {
       margin-top: 1rem;
       font-size: 18px;

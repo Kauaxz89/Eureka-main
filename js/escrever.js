@@ -27,6 +27,10 @@
       resultado.textContent = "";
     }
 
+    function voltarParaInicio() {
+  window.location.href = "index.html"; // Substitua com a URL desejada
+}
+
     function verificarResposta() {
       const resposta = entrada.value.trim().toLowerCase();
       if (!resposta) {
@@ -51,4 +55,11 @@
       pontosDisplay.textContent = pontos;
       novaPalavra();
     };
+
+    document.getElementById("entradaUsuario").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    verificarResposta();
+  }
+});
+
   

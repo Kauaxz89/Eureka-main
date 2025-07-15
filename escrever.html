@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogo de Treino de Escrita - Eureka</title>
   <!-- Fonte mais infantil -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/escrever.css"> 
+  <link rel="stylesheet" href="css/escrever.css">
 </head>
+
 <body>
 
   <!-- Simulando o cabeçalho do site -->
@@ -22,17 +24,21 @@
 
   <div class="palavra-modelo" id="palavraModelo">_</div>
 
-  <br/>
+  <br />
   <input type="text" id="entradaUsuario" placeholder="Digite aqui..." autocomplete="off" />
 
   <div class="controles">
     <button onclick="verificarResposta()">✅ Verificar</button>
     <button onclick="novaPalavra()">🔄 Nova Palavra</button>
+    <button class="voltar" onclick="voltarParaInicio()">⬅️ Voltar</button>
+
+
   </div>
 
   <div id="resultado"></div>
   <div class="pontuacao">Pontuação: <span id="pontos">0</span> 🎉</div>
-   <script src="js/escrever.js"></script>
+  <script src="js/escrever.js"></script>
 
 </body>
+
 </html>

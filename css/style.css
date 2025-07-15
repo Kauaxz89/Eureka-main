@@ -1,17 +1,21 @@
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Importação de Fonte */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap');
 
+/* Estilos do Body */
 body {
     font-family: 'Baloo 2', cursive;
     background-color: #fef6ec;
     color: #3e3a39;
 }
 
+/* Estilos do Cabeçalho */
 .header-eureka {
     background-color: blue;
     padding: 1.5rem 2rem;
@@ -20,8 +24,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-
+/* Estilos da Seção Início */
 #inicio {
     display: flex;
     justify-content: space-between;
@@ -31,7 +34,7 @@ body {
 }
 
 #coruja img {
-    max-height: 300px;
+    max-height: 300px; /* Ou 400px, conforme sua preferência final */
 }
 
 #diversao {
@@ -51,42 +54,26 @@ body {
     font-size: 1.2rem;
 }
 
-.botao-comecar {
-    display: inline-block;
-    background-color: #ff7300;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 2rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: background 0.3s;
-    margin-top: 1rem;
-
-
-}
-
+/* Animação do Botão Começar */
 @keyframes pulso {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
-.botao-comecar:hover {
+/* Aplica a animação ao botão Começar (que agora tem classe Bootstrap) */
+.btn.btn-primary:hover { /* Seletor mais específico para garantir que a animação funcione */
     animation: pulso 0.4s ease-in-out;
 }
 
-
-.botao-comecar:hover {
-    background-color: #c94f15;
-}
-
+/* Estilos da Seção Jogos */
 #jogos {
     text-align: center;
     padding: 2rem;
     background-color: #FFEBCD;
 }
 
+/* Estilos do Container de Jogos */
 .jogo-container {
     display: flex;
     justify-content: center;
@@ -94,25 +81,17 @@ body {
     margin-top: 2rem;
 }
 
+/* Estilos dos Cards de Jogo */
 .jogo-card {
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
-}
-
-.jogo-card {
-    border-radius: 20px;
-    color: white;
-    font-family: 'Baloo 2', cursive;
-    transition: transform 0.3s;
+    border-radius: 20px; /* Mantém seu border-radius personalizado */
+    width: 250px; /* Mantém sua largura fixa */
+    text-align: center; /* Mantém o alinhamento central */
+    transition: transform 0.3s; /* Mantém a transição para o hover */
 }
 
 .jogo-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Mantém o efeito de hover */
 }
-
 
 .jogo-card h3 {
     font-size: 1.5rem;
@@ -121,23 +100,11 @@ body {
 
 .jogo-card p {
     font-size: 1rem;
-    color: #555;
+    color: #555; /* Mantém a cor do texto padrão nos cards */
     margin-top: 10px;
 }
 
-.jogo-card button {
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.jogo-card button:hover {
-    background-color: #c94f15;
-}
-
+/* Fundo Colorido dos Cards */
 #jogo-pintar {
     background-color: rgb(255, 231, 20);
 }
@@ -150,26 +117,7 @@ body {
     background-color: #00BFFF;
 }
 
-
-.botao-jogo {
-    display: inline-block;
-    background: #ff7300;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background 0.3s;
-    text-align: center;
-    margin-top: 20px;
-
-}
-
-.botao-jogo:hover {
-    background-color: #c94f15;
-}
-
+/* Estilos de Telas de Jogo */
 .jogo-tela {
     display: none;
     flex-direction: column;
@@ -192,9 +140,9 @@ body {
 
 canvas {
     background-color: white;
-    border: 8px solid #d9d9d9; /* borda tipo moldura */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra para parecer elevado */
-    border-radius: 8px; /* cantos arredondados */
+    border: 8px solid #d9d9d9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 .controles {
@@ -204,6 +152,7 @@ canvas {
     margin-bottom: 1rem;
 }
 
+/* Estilos do Rodapé */
 footer {
     background: linear-gradient(to right, #ffa07a, #f08080);
     color: #fff;
@@ -212,6 +161,7 @@ footer {
     border-top: 5px dotted white;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     #inicio {
         flex-direction: column;
@@ -229,7 +179,7 @@ footer {
     }
 
     .jogo-card {
-        width: 90%;
+        width: 90%; /* Ajusta a largura dos cards para 90% em telas menores */
     }
 
     #coruja img {
@@ -237,10 +187,11 @@ footer {
         height: auto;
     }
 
-    .botao-comecar,
-    .botao-jogo {
+    /* Aplica largura aos botões Bootstrap em telas menores */
+    .btn { /* Altera todos os botões Bootstrap */
         width: 80%;
         text-align: center;
+        box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
     }
 
     .canvas-container {

@@ -91,7 +91,7 @@
     };
 
     document.getElementById("voltarBtn").onclick = function () {
-  window.location.href = "index.html"; // Altere para o caminho da sua tela inicial
+  window.location.href = "home.html"; // Altere para o caminho da sua tela inicial
 };
 
 document.getElementById("guess").addEventListener("keydown", function (event) {

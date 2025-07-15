@@ -48,7 +48,7 @@ function limparCanvas() {
 
 // Função para voltar à página inicial
 function fecharJogo() {
-    window.location.href = 'index.html';
+    window.location.href = 'home.html';
 }
 
 // Inicialização automática dependendo da página
@@ -140,7 +140,7 @@ function iniciarDesenhar() {
     borrachaBtn.addEventListener('click', () => {
         usarBorracha = !usarBorracha;
         borrachaBtn.textContent = usarBorracha ? '🖊️ Modo Lápis' : '🧽 Modo Borracha';
-        canvas.style.cursor = usarBorracha ? 'not-allowed' : 'crosshair';
+        canvas.style.cursor = usarBorracha ? 'crosshair' : 'crosshair';
     });
 
     // 🧹 Limpar canvas

@@ -28,7 +28,7 @@
     }
 
     function voltarParaInicio() {
-  window.location.href = "index.html"; // Substitua com a URL desejada
+  window.location.href = "home.html"; // Substitua com a URL desejada
 }
 
     function verificarResposta() {
